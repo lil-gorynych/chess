@@ -1,26 +1,27 @@
 package edu.gorynych.chess.Game;
 import edu.gorynych.chess.Board.Board;
+import edu.gorynych.chess.Figures.Figure;
+import edu.gorynych.chess.PP.Printer;
 
-import static edu.gorynych.chess.PP.Printer.printBoard;
+import java.util.ArrayList;
 
 
 public class Game {
 
     private int steps;
-    private Board board = new Board();
+    private final Board board = new Board();
+    private int status = 1;
 
     public Game() {
         this.steps = 0;
         this.board.newBoard();
     }
 
-
     public int beginGame() {
 
         while (this.steps < 10) {
-            printBoard(this.board);
             makeStep();
-            this.steps++;
+            changeStatus();
         }
 
         return 1;
@@ -28,6 +29,8 @@ public class Game {
 
 
     private void makeStep() {
+        Printer.printBoard(this.board);
+        Printer.printStatus(this.status);
         Move move = new Move(this.steps);
         move.setMove();
 
@@ -40,6 +43,13 @@ public class Game {
         }
 
         move.makeMove(this.board);
+
+        this.steps++;
+    }
+
+
+    private void changeStatus(){
+
     }
 
 

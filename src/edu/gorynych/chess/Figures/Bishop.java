@@ -11,7 +11,6 @@ public class Bishop implements Figure{
         this.image = (color == 1) ? ('\u2657') : ('\u265d');
     }
 
-
     @Override
     public Figure copyOf() {
         return new Bishop(this.color);

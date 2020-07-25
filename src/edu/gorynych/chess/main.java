@@ -1,12 +1,18 @@
 package edu.gorynych.chess;
 
 import edu.gorynych.chess.Game.Game;
+import edu.gorynych.chess.PP.Printer;
 
 public class main {
     public static void main(String[] args) {
-        System.out.println("Hello!!! Begin game");
-
         Game game = new Game();
-        game.beginGame();
+        int winner;
+
+        System.out.println("Hello!!! Begin game\n\n\n");
+
+        winner = game.beginGame();
+        Printer.printWinner(winner);
     }
+
+
 }

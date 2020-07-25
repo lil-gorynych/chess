@@ -1,6 +1,5 @@
 package edu.gorynych.chess.Figures;
 
-import edu.gorynych.chess.Game.Move;
 
 public class King implements Figure{
     private final int color;

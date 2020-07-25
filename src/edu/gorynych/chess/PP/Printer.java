@@ -2,12 +2,20 @@ package edu.gorynych.chess.PP;
 
 import edu.gorynych.chess.Board.Board;
 
+import javax.swing.text.AttributeSet;
+import java.util.ArrayList;
+
 
 public class Printer {
+    static String[] colors = {"black, white"};
+
 
     //print chessboard
     public static void printBoard(Board board) {
 
+        System.out.println("\n\n\n");
+        printWhiteCaptured(board);
+        printAbcLine();
         printBoardLine();
 
         for (int i = 0; i < 8; i++) {
@@ -21,11 +29,28 @@ public class Printer {
         }
 
         printAbcLine();
+        printBlackCaptured(board);
+        System.out.println();
     }
 
 
     //HELP FUNCTIONS
     //prints ab...h line in the end
+    private static void printWhiteCaptured(Board board) {
+        System.out.print("Captured white figures: ");
+        for (Character i : board.getCapturedWhite()) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+    private static void printBlackCaptured(Board board) {
+        System.out.print("Captured black figures: ");
+        for (Character i : board.getCapturedBlack()) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
     private static void printAbcLine () {
         String s = "abcdefgh";
 
@@ -47,6 +72,35 @@ public class Printer {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
             System.out.print(" ");
+        }
+    }
+
+    //prints status
+    public static void printStatus(int status) {
+        switch (status) {
+            case 0: break;
+            case 1:
+                System.out.println("Check!");
+                break;
+            case 2:
+                System.out.println("Checkmate!");
+                break;
+        }
+    }
+
+
+    //print winner
+    public static void printWinner(int winner) {
+        switch (winner) {
+            case -1:
+                System.out.println("Blacks wins!");
+                break;
+            case 0:
+                System.out.println("It's a draw!");
+                break;
+            case 1:
+                System.out.println("White wins!");
+                break;
         }
     }
 }

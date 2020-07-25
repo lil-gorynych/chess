@@ -2,11 +2,16 @@ package edu.gorynych.chess.Board;
 
 import edu.gorynych.chess.Figures.Empty;
 import edu.gorynych.chess.Figures.Figure;
+
+import java.util.ArrayList;
+
 import static edu.gorynych.chess.PP.Parser.parseCell;
 
 
 public class Board {
     private final Figure[][] board = new Figure[8][8];
+    private ArrayList<Character> capturedWhite = new ArrayList<>();
+    private ArrayList<Character> capturedBlack = new ArrayList<>();
 
     public void newBoard() {
         String[][] newBoard = {
@@ -31,12 +36,8 @@ public class Board {
         return this.board[i][j];
     }
 
-    private void killFigure(int i, int j) {
-        this.board[i][j] = new Empty();
-    }
-    private void moveFigure(int i, int j, int k, int l) {
-        this.board[i][j] = this.board[k][l].copyOf();
-    }
+
+
 
     public void transformBoard(int[] from, int[] to) {
         int fromCol = from[0], fromRow = from[1];
@@ -45,6 +46,36 @@ public class Board {
         moveFigure(toRow, toCol, fromRow, fromCol);
         killFigure(fromRow, fromCol);
 
+    }
+
+    //help functions
+    private void addToCaptured(int i, int j) {
+        Figure tmp = getFigure(i, j);
+
+        switch (tmp.getColor()) {
+            case 1:
+                this.capturedWhite.add(Character.valueOf(tmp.getImage()));
+                break;
+            case -1:
+                this.capturedBlack.add(Character.valueOf(tmp.getImage()));
+                break;
+        }
+    }
+
+    public ArrayList<Character> getCapturedWhite() {
+        return this.capturedWhite;
+    }
+    public ArrayList<Character> getCapturedBlack() {
+        return this.capturedBlack;
+    }
+
+    private void killFigure(int i, int j) {
+        this.board[i][j] = new Empty();
+    }
+
+    private void moveFigure(int i, int j, int k, int l) {
+        addToCaptured(i, j);
+        this.board[i][j] = this.board[k][l].copyOf();
     }
 
 }
