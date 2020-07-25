@@ -1,16 +1,14 @@
 package edu.gorynych.chess.Game;
-import edu.gorynych.chess.Board.Board;
-import edu.gorynych.chess.Figures.Figure;
-import edu.gorynych.chess.PP.Printer;
 
-import java.util.ArrayList;
+import edu.gorynych.chess.Board.Board;
+import edu.gorynych.chess.PP.Printer;
 
 
 public class Game {
 
     private int steps;
     private final Board board = new Board();
-    private int status = 1;
+    private int status = 0;
 
     public Game() {
         this.steps = 0;

@@ -1,7 +1,5 @@
 package edu.gorynych.chess.Figures;
 
-import edu.gorynych.chess.Game.Move;
-
 public class Rook implements Figure{
     private final int color;
     private final char image;

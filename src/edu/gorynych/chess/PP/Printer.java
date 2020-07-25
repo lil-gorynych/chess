@@ -2,9 +2,6 @@ package edu.gorynych.chess.PP;
 
 import edu.gorynych.chess.Board.Board;
 
-import javax.swing.text.AttributeSet;
-import java.util.ArrayList;
-
 
 public class Printer {
     static String[] colors = {"black, white"};
