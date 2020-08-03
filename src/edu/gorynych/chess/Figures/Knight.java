@@ -1,6 +1,6 @@
 package edu.gorynych.chess.Figures;
 
-public class Knight implements Figure{
+public class Knight implements Figure {
     private final int color;
     private final char image;
 

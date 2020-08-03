@@ -1,6 +1,6 @@
 package edu.gorynych.chess.Figures;
 
-public class Pawn implements Figure{
+public class Pawn implements Figure {
     private final int color;
     private final char image;
     private boolean firstMove;

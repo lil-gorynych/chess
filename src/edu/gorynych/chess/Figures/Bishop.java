@@ -1,7 +1,7 @@
 package edu.gorynych.chess.Figures;
 
 
-public class Bishop implements Figure{
+public class Bishop implements Figure {
     private final int color;
     private final char image;
 

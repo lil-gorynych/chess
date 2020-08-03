@@ -37,8 +37,6 @@ public class Board {
     }
 
 
-
-
     public void transformBoard(int[] from, int[] to) {
         int fromCol = from[0], fromRow = from[1];
         int toCol = to[0], toRow = to[1];
@@ -65,6 +63,7 @@ public class Board {
     public ArrayList<Character> getCapturedWhite() {
         return this.capturedWhite;
     }
+
     public ArrayList<Character> getCapturedBlack() {
         return this.capturedBlack;
     }

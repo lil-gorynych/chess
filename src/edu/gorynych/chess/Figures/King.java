@@ -1,7 +1,7 @@
 package edu.gorynych.chess.Figures;
 
 
-public class King implements Figure{
+public class King implements Figure {
     private final int color;
     private final char image;
 

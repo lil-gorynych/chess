@@ -9,7 +9,7 @@ public class Printer {
 
     //print chessboard
     public static void printBoard(Board board) {
-
+        clearScreen();
         System.out.println("\n\n\n");
         printWhiteCaptured(board);
         printAbcLine();
@@ -40,6 +40,7 @@ public class Printer {
         }
         System.out.println();
     }
+
     private static void printBlackCaptured(Board board) {
         System.out.print("Captured black figures: ");
         for (Character i : board.getCapturedBlack()) {
@@ -48,7 +49,7 @@ public class Printer {
         System.out.println();
     }
 
-    private static void printAbcLine () {
+    private static void printAbcLine() {
         String s = "abcdefgh";
 
         System.out.print("  ");
@@ -57,15 +58,17 @@ public class Printer {
         }
         System.out.println();
     }
+
     //prints the line after every row
-    private static void printBoardLine () {
+    private static void printBoardLine() {
         for (int i = 0; i < 8; i++) {
             System.out.print("+---");
         }
         System.out.println("+");
     }
+
     //prints array in the line
-    public static void printArray (int[] array) {
+    public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
             System.out.print(" ");
@@ -75,7 +78,8 @@ public class Printer {
     //prints status
     public static void printStatus(int status) {
         switch (status) {
-            case 0: break;
+            case 0:
+                break;
             case 1:
                 System.out.println("Check!");
                 break;
@@ -99,5 +103,12 @@ public class Printer {
                 System.out.println("White wins!");
                 break;
         }
+    }
+
+
+    //print new screen - for checking  only - will be removed
+    private static void clearScreen() {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 }

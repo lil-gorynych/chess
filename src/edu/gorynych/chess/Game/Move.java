@@ -14,7 +14,7 @@ public class Move {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public Move (int step) {
+    public Move(int step) {
         this.color = (step % 2 == 0) ? 1 : -1;
     }
 
@@ -22,9 +22,11 @@ public class Move {
     public int[] getNewPos() {
         return this.newPos;
     }
+
     public int[] getCurPos() {
         return this.curPos;
     }
+
     public int getColor() {
         return this.color;
     }
@@ -40,6 +42,7 @@ public class Move {
         }
         reverseMove();
     }
+
     //make change on the board
     public void makeMove(Board board) {
         board.transformBoard(this.curPos, this.newPos);
@@ -47,10 +50,11 @@ public class Move {
 
 
     //help functions
-    private int reverseInt (int pos) {
-        return 7-pos;
+    private int reverseInt(int pos) {
+        return 7 - pos;
     }
-    private void reverseMove () {
+
+    private void reverseMove() {
         newPos[1] = reverseInt(this.newPos[1]);
         curPos[1] = reverseInt(this.curPos[1]);
     }

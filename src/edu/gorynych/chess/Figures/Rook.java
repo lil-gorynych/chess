@@ -1,6 +1,6 @@
 package edu.gorynych.chess.Figures;
 
-public class Rook implements Figure{
+public class Rook implements Figure {
     private final int color;
     private final char image;
 
@@ -19,7 +19,9 @@ public class Rook implements Figure{
     //comes from interface Figure
     @Override
     public boolean validateMove(int x, int y) {
-        if (x == 0 || y == 0) { return true; }
+        if (x == 0 || y == 0) {
+            return true;
+        }
         return false;
     }
 

@@ -1,6 +1,6 @@
 package edu.gorynych.chess.Figures;
 
-public class Empty implements Figure{
+public class Empty implements Figure {
     private final int color = 0;
     private final char image = ' ';
 

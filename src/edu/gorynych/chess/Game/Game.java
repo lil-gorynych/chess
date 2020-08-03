@@ -6,8 +6,8 @@ import edu.gorynych.chess.PP.Printer;
 
 public class Game {
 
-    private int steps;
     private final Board board = new Board();
+    private int steps;
     private int status = 0;
 
     public Game() {
@@ -46,7 +46,7 @@ public class Game {
     }
 
 
-    private void changeStatus(){
+    private void changeStatus() {
 
     }
 

@@ -1,6 +1,6 @@
 package edu.gorynych.chess.Figures;
 
-public class Queen implements Figure{
+public class Queen implements Figure {
     private final int color;
     private final char image;
 
@@ -19,7 +19,9 @@ public class Queen implements Figure{
     //comes from interface Figures
     @Override
     public boolean validateMove(int x, int y) {
-        if ((x == 0 || y == 0) || (Math.abs(x) == Math.abs(y))) { return true; }
+        if ((x == 0 || y == 0) || (Math.abs(x) == Math.abs(y))) {
+            return true;
+        }
         return false;
     }
 
