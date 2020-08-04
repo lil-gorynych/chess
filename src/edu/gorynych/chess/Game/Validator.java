@@ -64,8 +64,8 @@ public class Validator {
     }
 
     private boolean checkRulePawn(Pawn a) {
-        int deltaRow = this.newRow - this.curRow;
-        int deltaCol = this.newCol - this.curCol;
+        int deltaRow = this.newRow - this.curRow,
+                deltaCol = this.newCol - this.curCol;
 
         if (isAttack()) {
             return a.validateAttack(deltaRow, deltaCol) & checkLine();

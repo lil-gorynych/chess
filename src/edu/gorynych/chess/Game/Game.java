@@ -9,6 +9,8 @@ public class Game {
     private final Board board = new Board();
     private int steps;
     private int status = 0;
+    boolean whKingUnderAttack;
+    boolean blKingUnderAttack;
 
     public Game() {
         this.steps = 0;
