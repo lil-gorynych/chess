@@ -3,12 +3,12 @@ package edu.gorynych.chess.Figures;
 
 public class Bishop implements Figure {
     private final int color;
-    private final char image;
+    private final Character image;
 
 
     public Bishop(int color) {
         this.color = color;
-        this.image = (color == 1) ? ('\u2657') : ('\u265d');
+        this.image = (color == 1) ? ((Character) '\u2657') : ((Character) '\u265d');
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Bishop implements Figure {
     }
 
     @Override
-    public char getImage() {
+    public Character getImage() {
         return this.image;
     }
 

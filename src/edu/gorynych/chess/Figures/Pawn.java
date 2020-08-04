@@ -2,13 +2,13 @@ package edu.gorynych.chess.Figures;
 
 public class Pawn implements Figure {
     private final int color;
-    private final char image;
+    private final Character image;
     private boolean firstMove;
 
 
     public Pawn(int color) {
         this.color = color;
-        this.image = (color == 1) ? ('\u2659') : ('\u265f');
+        this.image = (color == 1) ? ((Character) '\u2659') : ((Character) '\u265f');
         this.firstMove = true;
     }
 
@@ -16,7 +16,7 @@ public class Pawn implements Figure {
     //for copy function
     public Pawn(int color, boolean firstMove) {
         this.color = color;
-        this.image = (color == 1) ? ('\u2659') : ('\u265f');
+        this.image = (color == 1) ? ((Character) '\u2659') : ((Character) '\u265f');
         this.firstMove = firstMove;
     }
 
@@ -56,7 +56,7 @@ public class Pawn implements Figure {
     }
 
     @Override
-    public char getImage() {
+    public Character getImage() {
         return this.image;
     }
 

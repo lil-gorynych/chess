@@ -8,11 +8,11 @@ import static edu.gorynych.chess.PP.Parser.parseMove;
 
 
 public class Move {
-    private int[] newPos = new int[2];
-    private int[] curPos = new int[2];
-    private int color;
+    private final int[] newPos = new int[2];
+    private final int[] curPos = new int[2];
+    private final int color;
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public Move(int step) {
         this.color = (step % 2 == 0) ? 1 : -1;

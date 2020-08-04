@@ -2,12 +2,12 @@ package edu.gorynych.chess.Figures;
 
 public class Rook implements Figure {
     private final int color;
-    private final char image;
+    private final Character image;
 
 
     public Rook(int color) {
         this.color = color;
-        this.image = (color == 1) ? ('\u2656') : ('\u265c');
+        this.image = (color == 1) ? ((Character) '\u2656') : ((Character) '\u265c');
     }
 
 
@@ -19,10 +19,7 @@ public class Rook implements Figure {
     //comes from interface Figure
     @Override
     public boolean validateMove(int x, int y) {
-        if (x == 0 || y == 0) {
-            return true;
-        }
-        return false;
+        return x == 0 || y == 0;
     }
 
     @Override
@@ -31,7 +28,7 @@ public class Rook implements Figure {
     }
 
     @Override
-    public char getImage() {
+    public Character getImage() {
         return this.image;
     }
 }

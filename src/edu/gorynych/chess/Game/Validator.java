@@ -56,15 +56,9 @@ public class Validator {
     private boolean checkRule() {
         Figure a = this.board.getFigure(this.curRow, this.curCol);
 
-        if (a instanceof Pawn) {
-            return checkRulePawn((Pawn) a);
-        }
-        if (a instanceof Knight) {
-            return checkRuleKnight((Knight) a);
-        }
-        if (a instanceof King) {
-            return checkRuleKing((King) a);
-        }
+        if (a instanceof Pawn)   { return checkRulePawn((Pawn) a);     }
+        if (a instanceof Knight) { return checkRuleKnight((Knight) a); }
+        if (a instanceof King)   { return checkRuleKing((King) a);     }
 
         return checkRuleBase(a);
     }

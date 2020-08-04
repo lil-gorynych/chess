@@ -10,8 +10,8 @@ import static edu.gorynych.chess.PP.Parser.parseCell;
 
 public class Board {
     private final Figure[][] board = new Figure[8][8];
-    private ArrayList<Character> capturedWhite = new ArrayList<>();
-    private ArrayList<Character> capturedBlack = new ArrayList<>();
+    private final ArrayList<Character> capturedWhite = new ArrayList<>();
+    private final ArrayList<Character> capturedBlack = new ArrayList<>();
 
     public void newBoard() {
         String[][] newBoard = {
@@ -43,8 +43,8 @@ public class Board {
 
         moveFigure(toRow, toCol, fromRow, fromCol);
         killFigure(fromRow, fromCol);
-
     }
+
 
     //help functions
     private void addToCaptured(int i, int j) {
@@ -52,10 +52,10 @@ public class Board {
 
         switch (tmp.getColor()) {
             case 1:
-                this.capturedWhite.add(Character.valueOf(tmp.getImage()));
+                this.capturedWhite.add(tmp.getImage());
                 break;
             case -1:
-                this.capturedBlack.add(Character.valueOf(tmp.getImage()));
+                this.capturedBlack.add(tmp.getImage());
                 break;
         }
     }

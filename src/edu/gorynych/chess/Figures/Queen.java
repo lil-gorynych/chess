@@ -2,12 +2,12 @@ package edu.gorynych.chess.Figures;
 
 public class Queen implements Figure {
     private final int color;
-    private final char image;
+    private final Character image;
 
 
     public Queen(int color) {
         this.color = color;
-        this.image = (color == 1) ? ('\u2655') : ('\u265b');
+        this.image = (color == 1) ? ((Character) '\u2655') : ((Character) '\u265b');
     }
 
 
@@ -19,10 +19,7 @@ public class Queen implements Figure {
     //comes from interface Figures
     @Override
     public boolean validateMove(int x, int y) {
-        if ((x == 0 || y == 0) || (Math.abs(x) == Math.abs(y))) {
-            return true;
-        }
-        return false;
+        return Math.abs(x) == Math.abs(y);
     }
 
     @Override
@@ -31,7 +28,7 @@ public class Queen implements Figure {
     }
 
     @Override
-    public char getImage() {
+    public Character getImage() {
         return this.image;
     }
 }

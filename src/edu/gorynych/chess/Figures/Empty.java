@@ -1,8 +1,6 @@
 package edu.gorynych.chess.Figures;
 
 public class Empty implements Figure {
-    private final int color = 0;
-    private final char image = ' ';
 
 
     @Override
@@ -17,11 +15,11 @@ public class Empty implements Figure {
 
     @Override
     public int getColor() {
-        return this.color;
+        return 0;
     }
 
     @Override
-    public char getImage() {
-        return this.image;
+    public Character getImage() {
+        return ' ';
     }
 }

@@ -3,12 +3,12 @@ package edu.gorynych.chess.Figures;
 
 public class King implements Figure {
     private final int color;
-    private final char image;
+    private final Character image;
 
 
     public King(int color) {
         this.color = color;
-        this.image = (color == 1) ? ('\u2654') : ('\u265a');
+        this.image = (color == 1) ? ((Character) '\u2654') : ((Character) '\u265a');
     }
 
 
@@ -31,7 +31,7 @@ public class King implements Figure {
     }
 
     @Override
-    public char getImage() {
+    public Character getImage() {
         return this.image;
     }
 }
