@@ -9,5 +9,4 @@ public interface Figure {
     int getColor();
 
     char getImage();
-
 }

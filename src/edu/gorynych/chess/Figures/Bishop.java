@@ -32,4 +32,6 @@ public class Bishop implements Figure {
     public char getImage() {
         return this.image;
     }
+
+
 }

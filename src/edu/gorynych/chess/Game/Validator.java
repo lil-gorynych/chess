@@ -18,12 +18,21 @@ public class Validator {
         this.color = move.getColor();
         this.board = board;
     }
-
     public void setMove(Move move) {
         this.curRow = (short) move.getCurPos()[1];
         this.curCol = (short) move.getCurPos()[0];
         this.newRow = (short) move.getNewPos()[1];
         this.newCol = (short) move.getNewPos()[0];
+    }
+
+    public Validator (Board board, int color) {
+        this.color = color;
+        this.board = board;
+    }
+    public void setMove (int curRow, int curCol,
+                         int newRow, int newCol) {
+        this.curRow = curRow; this.curCol = curCol;
+        this.newRow = newRow; this.newCol = newCol;
     }
 
     public boolean checkMove() {
